@@ -4,5 +4,11 @@
         "apellido": "Perez",
         "email": "emailPrueba@example.com",
         "contraseña": "pass123456"
+    },
+    "usuarioNoValido":{
+        "nombre": "No",
+        "apellido": "Existe",
+        "email": "emailPruebaFicti@example.com",
+        "contraseña": "123456"
     }
 }

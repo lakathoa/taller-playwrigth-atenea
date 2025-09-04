@@ -11,6 +11,7 @@ export class LoginPage {
     readonly emailInput: Locator;
     readonly passwordInput: Locator;
     readonly loginButton: Locator;
+    readonly registerLink: Locator;
 
     //constructor inicializa los elementos
     constructor(page: Page) {
@@ -18,6 +19,7 @@ export class LoginPage {
         this.emailInput = page.locator('input[name="email"]');
         this.passwordInput = page.locator('input[name="password"]');
         this.loginButton = page.getByTestId('boton-login');
+        this.registerLink = page.getByTestId('link-registrarse-login');
     }
 
     //LA IDEA PRINCIPAL ES que los métodos hagan cosas específicas, una cosa a la vez
@@ -37,5 +39,9 @@ export class LoginPage {
     async completarYHacerClickBotonLogin(usuario: { email: string; contraseña: string; }) {
         await this.completarFormularioLogin(usuario);
         await this.hacerClickBotonLogin();
+    }
+
+    async hacerClickLinkRegistrarse() {
+        await this.registerLink.click();
     }
 }
