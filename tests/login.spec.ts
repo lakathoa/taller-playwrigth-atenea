@@ -12,7 +12,7 @@ test.beforeEach(async ({ page}) => {
   await loginPage.visitarPaginaLogin();
 })
 
-test('TC-7 Verificar que un usuario no pueda registrarse con email ya existente', async ({ page }) => {
+test('TC-7 Verificar login exitoso y redireccionamiento al Dashboard', async ({ page }) => {
   await loginPage.completarYHacerClickBotonLogin(TestData.usuarioValido);
   await expect(page.getByText('Inicio de sesión exitoso')).toBeVisible();
   await expect(dashboardPage.dashboardTitle).toBeVisible();

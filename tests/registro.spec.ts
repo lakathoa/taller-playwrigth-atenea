@@ -33,7 +33,7 @@ test('TC-4 Verificar redireccionamiento a página de inicio de sesión al hacer 
 
 test('TC-5 Verificar registro exitoso con datos válidos', async ({ page }) => {
   test.step('Completar el formulario de registro con datos válidos', async() =>{
-    const email = (TestData.usuarioValido.email.split('@'[0])) + Date.now().toString() + '@' + (TestData.usuarioValido.email.split('@'[1]));
+    const email = (TestData.usuarioValido.email.split('@')[0]) + Date.now().toString() + '@' + (TestData.usuarioValido.email.split('@')[1]);
     TestData.usuarioValido.email = email;
     await registerPage.completarFormularioRegistro(TestData.usuarioValido);
   });
@@ -44,7 +44,7 @@ test('TC-5 Verificar registro exitoso con datos válidos', async ({ page }) => {
 });
 
 test('TC-6 Verificar que un usuario no pueda registrarse con email ya existente', async ({ page }) => {
-  const email = (TestData.usuarioValido.email.split('@'[0])) + Date.now().toString() + '@' + (TestData.usuarioValido.email.split('@'[1]));
+  const email = (TestData.usuarioValido.email.split('@')[0]) + Date.now().toString() + '@' + (TestData.usuarioValido.email.split('@')[1]);
   TestData.usuarioValido.email = email;
   await registerPage.completarYHacerClickBotonRegistro(TestData.usuarioValido);
   await expect(page.getByText('Registro exitoso')).toBeVisible();
