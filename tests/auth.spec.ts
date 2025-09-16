@@ -70,3 +70,6 @@ test('TC-14 Verificar cierre de sesión exitoso y protección de rutas', async (
     await dashboardPage.visitarPaginaDashboard();
     await expect(page).toHaveURL('http://localhost:3000/login');
 });
+
+
+
