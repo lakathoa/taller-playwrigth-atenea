@@ -13,7 +13,7 @@ test.beforeEach(async ({ page}) => {
   await loginPage.visitarPaginaLogin();
 })
 
-test('TC-19 Loguearse con un nuevo usuario creado por BE y validar response', async ({ page, request }) => {
+test('TC-20 Loguearse con un nuevo usuario creado por BE y validar response', async ({ page, request }) => {
   const nuevoUsuario = await BackendUtils.crearUsuarioPorAPI(request, TestData.usuarioValido)
   const responsePromiseLogin = page.waitForResponse('http://localhost:4000/api/auth/login');
   await loginPage.completarYHacerClickBotonLogin(nuevoUsuario);
